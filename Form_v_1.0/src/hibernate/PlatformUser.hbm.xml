@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping package="aisha.bean">
+	<class name="PlatformUser" table="PLATFORM_USER">
+
+
+			<id name="id" type="java.lang.Long" column="id">
+			<generator class="org.hibernate.id.TableHiLoGenerator">
+				<param name="table">HibernateUniqueKey</param>
+				<param name="column">NexHiValue</param>
+			</generator>
+		</id>
+
+<!-- 		<version name="version" column="Version" />
+		<property name="status" column="Status" type="java.lang.String"
+			not-null="true" length="32" />
+		<property name="notes" column="Note" type="java.lang.String"
+			not-null="true" length="256" />
+		<property name="startDate" column="StartDate" type="java.util.Date"
+			not-null="true" length="32" />
+		<property name="endDate" column="EndDate" type="java.util.Date"
+			not-null="true" length="32" />
+		<property name="lastUpdated" column="LastUpdated" type="java.util.Date"
+			not-null="true" length="32" /> -->
+		 <property name="userType"          column="UserType"          type="java.lang.String"  not-null="false" length="64" />
+		<property name="userName"          column="USER_NAME"          type="java.lang.String"  not-null="true" length="32" />
+		  <property name="password"          column="Password"          type="java.lang.String"  not-null="true" length="128" />
+		   <property name="userRole"          column="UserRole"          type="java.lang.String"  not-null="true" length="64" />
+		   <property name="userKey"           column="UserKey"           type="java.lang.String"  not-null="false" length="256" />
+		  
+<!-- 		<property name="userFullName"      column="UserFullName"      type="java.lang.String"  not-null="false" length="128" />
+		<property name="passwordHint"      column="PasswordHint"      type="java.lang.String"  not-null="false" length="128" />
+		<property name="passwordHintAnswer" column="PasswordHintAnswer" type="java.lang.String" not-null="false" length="128" />
+		<property name="email"             column="Email"             type="java.lang.String"  not-null="false" length="128" />
+  		<property name="enabled"           column="Enabled"           type="boolean"  not-null="false" /> 
+  		<property name="hasLoggedOut"      column="HasLoggedOut"      type="boolean"  not-null="false" /> 
+ 
+        <property name="userDefaultDevice" column="UserDefaultDevice" type="java.lang.String"  not-null="false" length="128" />
+		<property name="lastDeviceUsed"    column="LastDeviceUsed"    type="java.lang.String"  not-null="false" length="128" />
+		
+		<property name="lastLoginDate"    column="LastLoginDate"      type="java.util.Date"    not-null="false" />
+ 		<property name="creationDate"            type="java.util.Date"  not-null="true" length="32" />
+		<column   name="CREATIONDATE"      default="SYSDATE" /></property> 
+		<property name="activationDate"    column="ActivationDate"    type="java.util.Date"    not-null="false" length="45" />
+        <property name="expireDate"        column="ExpireDate"        type="java.util.Date"    not-null="false" length="45" />
+		<property name="disabledDate"      column="DisabledDate"      type="java.util.Date"    not-null="false" length="45" />
+		
+		<property name="userKey"           column="UserKey"           type="java.lang.String"  not-null="false" length="256" />
+		<property name="userType"          column="UserType"          type="java.lang.String"  not-null="false" length="64" />
+        <property name="userRole"          column="UserRole"          type="java.lang.String"  not-null="true" length="64" /> -->
+<!-- 		<property name="loginTryCount"     column="LoginTryCount"     type="java.lang.Integer" not-null="true"  />
+		
+      <property name="createdBy"           column="createdBy"           type="java.lang.String" length="20" />
+      <property name="lastModifiedBy"      column="lastModifiedBy"      type="java.lang.String" length="20" />
+	 -->
+<property name="field1" column="FIELD1" type="java.lang.String" not-null="false" length="256" />
+<property name="field2" column="FIELD2" type="java.lang.String" not-null="false" length="256" />
+<property name="field3" column="FIELD3" type="java.lang.String" not-null="false" length="256" />		
+<property name="field4" column="FIELD4" type="java.lang.String" not-null="false" length="256" />
+<property name="field5" column="FIELD5" type="java.lang.String" not-null="false" length="256" />
+<property name="field6" column="FIELD6" type="java.lang.String" not-null="false" length="256" />
+<property name="field7" column="FIELD7" type="java.lang.String" not-null="false" length="256" />
+<property name="field8" column="FIELD8" type="java.lang.String" not-null="false" length="256" />
+<property name="field9" column="FIELD9" type="java.lang.String" not-null="false" length="256" />
+<property name="field10" column="FIELD10" type="java.lang.String" not-null="false" length="256" />
+<property name="field11" column="FIELD11" type="java.lang.String" not-null="false" length="256" />
+<property name="field12" column="FIELD12" type="java.lang.String" not-null="false" length="256" />
+<property name="field13" column="FIELD13" type="java.lang.String" not-null="false" length="256" />
+<property name="field14" column="FIELD14" type="java.lang.String" not-null="false" length="256" />
+<property name="field15" column="FIELD15" type="java.lang.String" not-null="false" length="256" />
+<property name="field16" column="FIELD16" type="java.lang.Float" not-null="false" length="256" />
+<property name="field17" column="FIELD17" type="java.lang.Float" not-null="false" length="256" />
+<property name="field18" column="FIELD18" type="java.lang.Float" not-null="false" length="256" />
+<property name="field19" column="FIELD19" type="java.lang.Float" not-null="false" length="256" />
+<property name="field20" column="FIELD20" type="java.lang.Float" not-null="false" length="256" />
+<property name="field21" column="FIELD21" type="java.util.Date" not-null="false" length="256" />
+<property name="field22" column="FIELD22" type="java.lang.Float" not-null="false" length="256" />
+<property name="field23" column="FIELD23" type="java.lang.Float" not-null="false" length="256" />
+<property name="field24" column="FIELD24" type="java.lang.Float" not-null="false" length="256" />
+<property name="field25" column="FIELD25" type="java.lang.Float" not-null="false" length="256" />
+<property name="status" column="STATUS" type="java.lang.String" not-null="false" length="256" />
+<property name="LastUpdatedBy" column="LAST_UPDATED_BY" type="java.lang.String" not-null="false" length="256" />
+<property name="createdBy" column="CREATED_BY" type="java.lang.String" not-null="false" length="256" />
+<property name="creationTime" column="CREATION_TIME" type="java.util.Date" not-null="false" length="256" />
+<property name="LastUpdateTime" column="LAST_UPDATE_TIME" type="java.util.Date" not-null="false" length="256" />
+	</class>
+</hibernate-mapping>

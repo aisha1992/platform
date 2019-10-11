@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  Log4j Configuration                                                  -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+  
+  
+	 <appender name="ConsoleAppender" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.SimpleLayout"/>
+	</appender> 
+	
+	<appender name="FileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		
+		<param name="File" value="ebs_bpg.log"/>
+		<param name="Append" value="true"/>
+		<param name="DatePattern" value="'.'yyyy-MM-dd"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="date/time: %20d{dd MMM yyyy HH:mm:ss} [%t] %5p %c - %m%n"/>
+		</layout>
+	</appender>
+	<appender name="JasperJarFileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		
+		<param name="File" value="jasperreports.log"/>
+		<param name="Append" value="true"/>
+		<param name="DatePattern" value="'.'yyyy-MM-dd"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="date/time: %20d{dd MMM yyyy HH:mm:ss} [%t] %5p %c - %m%n"/>
+		</layout>
+	</appender>
+	
+	<appender name="JasperFileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		
+		<param name="File" value="reports_automation.log"/>
+		<param name="Append" value="true"/>
+		<param name="DatePattern" value="'.'yyyy-MM-dd"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="date/time: %20d{dd MMM yyyy HH:mm:ss} [%t] %5p %c - %m%n"/>
+		</layout>
+	</appender>
+	
+	<appender name="APIFileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		
+		<param name="File" value="ebs_bpg_api.log"/>
+		<param name="Append" value="true"/>
+		<param name="DatePattern" value="'.'yyyy-MM-dd"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="date/time: %20d{dd MMM yyyy HH:mm:ss} [%t] %5p %c - %m%n"/>
+		</layout>
+	</appender>
+	
+
+   <!-- ================ -->
+   <!-- Limit categories -->
+   <!-- ================ -->
+	<!-- Sample of how to switch off / on debugging for different parts of the application
+                in this case , the plugin-manager -->
+
+   <!-- Limit the org.apache category to INFO as its DEBUG is verbose -->
+	
+   <category name="aisha">
+		<priority value="DEBUG"/>
+			<appender-ref ref="FileAppender"/>
+		<appender-ref ref="ConsoleAppender"/>
+   </category> 
+   
+      <category name="org.springframework.security">
+		<priority value="DEBUG"/>
+			<appender-ref ref="FileAppender"/>
+		<appender-ref ref="ConsoleAppender"/>
+   </category> 
+   
+  
+ 	<category name="com.ebs.bpg.api.webServices.PaymentRequestWebService">
+		<priority value="ERROR"/>
+			<appender-ref ref="APIFileAppender"/>
+<!-- 			<appender-ref ref="ConsoleAppender"/> -->
+   </category>
+   
+   <category name="org.hibernate.SQL">
+		<priority value="ERROR"/>
+			<appender-ref ref="FileAppender"/>
+<appender-ref ref="ConsoleAppender"/> 
+   </category>
+   
+	<root>
+	<appender-ref ref="ConsoleAppender"/> 
+		<priority value ="debug"/>
+	</root>
+
+  <!--   for Jasper  -->
+<appender name="jasper" class="org.apache.log4j.ConsoleAppender">
+    <param name="append" value="true" />
+   	<layout class="org.apache.log4j.SimpleLayout" />
+</appender>
+
+<category name="net.sf.jasperreports" additivity="true">
+    <priority value="DEBUG" />
+    <appender-ref ref="JasperJarFileAppender"/> 			
+</category>
+
+<category name="com.ebs.bpg.reporting.services" additivity="true">
+    <priority value="DEBUG" />
+    <appender-ref ref="JasperFileAppender"/> 			
+</category>
+  <!--
+  There are five levels of logging in log4j: 
+	DEBUG 
+	INFO 
+	WARN 
+	ERROR 
+	FATAL 
+
+  -->
+
+
+</log4j:configuration>

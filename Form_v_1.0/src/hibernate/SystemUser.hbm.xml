@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="aisha.security.beans">
+	<class name="SystemUser" table="SYSTEM_USERS">
+
+
+			<id name="id" type="java.lang.Long" column="id">
+			<generator class="org.hibernate.id.TableHiLoGenerator">
+				<param name="table">HibernateUniqueKey</param>
+				<param name="column">NexHiValue</param>
+			</generator>
+		</id>
+
+<!-- 		<version name="version" column="Version" />
+		<property name="status" column="Status" type="java.lang.String"
+			not-null="true" length="32" />
+		<property name="notes" column="Note" type="java.lang.String"
+			not-null="true" length="256" />
+		<property name="startDate" column="StartDate" type="java.util.Date"
+			not-null="true" length="32" />
+		<property name="endDate" column="EndDate" type="java.util.Date"
+			not-null="true" length="32" />
+		<property name="lastUpdated" column="LastUpdated" type="java.util.Date"
+			not-null="true" length="32" /> -->
+		 <property name="userType"          column="UserType"          type="java.lang.String"  not-null="false" length="64" />
+		<property name="userName"          column="USER_NAME"          type="java.lang.String"  not-null="true" length="32" />
+		  <property name="password"          column="Password"          type="java.lang.String"  not-null="true" length="128" />
+		   <property name="userRole"          column="UserRole"          type="java.lang.String"  not-null="true" length="64" />
+		   <property name="userKey"           column="UserKey"           type="java.lang.String"  not-null="false" length="256" />
+		  
+<!-- 		<property name="userFullName"      column="UserFullName"      type="java.lang.String"  not-null="false" length="128" />
+		<property name="passwordHint"      column="PasswordHint"      type="java.lang.String"  not-null="false" length="128" />
+		<property name="passwordHintAnswer" column="PasswordHintAnswer" type="java.lang.String" not-null="false" length="128" />
+		<property name="email"             column="Email"             type="java.lang.String"  not-null="false" length="128" />
+  		<property name="enabled"           column="Enabled"           type="boolean"  not-null="false" /> 
+  		<property name="hasLoggedOut"      column="HasLoggedOut"      type="boolean"  not-null="false" /> 
+ 
+        <property name="userDefaultDevice" column="UserDefaultDevice" type="java.lang.String"  not-null="false" length="128" />
+		<property name="lastDeviceUsed"    column="LastDeviceUsed"    type="java.lang.String"  not-null="false" length="128" />
+		
+		<property name="lastLoginDate"    column="LastLoginDate"      type="java.util.Date"    not-null="false" />
+ 		<property name="creationDate"            type="java.util.Date"  not-null="true" length="32" />
+		<column   name="CREATIONDATE"      default="SYSDATE" /></property> 
+		<property name="activationDate"    column="ActivationDate"    type="java.util.Date"    not-null="false" length="45" />
+        <property name="expireDate"        column="ExpireDate"        type="java.util.Date"    not-null="false" length="45" />
+		<property name="disabledDate"      column="DisabledDate"      type="java.util.Date"    not-null="false" length="45" />
+		
+		<property name="userKey"           column="UserKey"           type="java.lang.String"  not-null="false" length="256" />
+		<property name="userType"          column="UserType"          type="java.lang.String"  not-null="false" length="64" />
+        <property name="userRole"          column="UserRole"          type="java.lang.String"  not-null="true" length="64" /> -->
+<!-- 		<property name="loginTryCount"     column="LoginTryCount"     type="java.lang.Integer" not-null="true"  />
+		
+      <property name="createdBy"           column="createdBy"           type="java.lang.String" length="20" />
+      <property name="lastModifiedBy"      column="lastModifiedBy"      type="java.lang.String" length="20" />
+	 -->
+	</class>
+</hibernate-mapping>

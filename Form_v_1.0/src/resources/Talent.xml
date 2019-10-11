@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fields>
+		    <field>
+				<fID>1</fID>
+				<fType>text</fType>
+				<fBoxSize></fBoxSize>
+				<fMaxLength></fMaxLength>				
+				<fContentEnglish>Full Name</fContentEnglish>
+				<fContentArabic>الأسم كاملا'</fContentArabic>
+				<fEnabledFor>shishi,alia,amel</fEnabledFor>
+				<fAccessedBy>NA</fAccessedBy>
+				<fRegExpr>NA</fRegExpr>
+				<fRequired>NA</fRequired>
+				<saveInField>field1</saveInField>
+			</field>										
+</fields>

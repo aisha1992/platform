@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="aisha.bean">
+	<class name="Application" table="APPLICATIONS">
+
+
+			<id name="id" type="java.lang.Long" column="id">
+			<generator class="org.hibernate.id.TableHiLoGenerator">
+				<param name="table">HibernateUniqueKey</param>
+				<param name="column">NexHiValue</param>
+			</generator>
+		</id>
+		<property name="NAME" column="NAME"
+			type="java.lang.String" not-null="false" length="32" />
+		<property name="CREATED_BY" column="CREATED_BY"
+			type="java.lang.String" not-null="false" length="32" />
+		<property name="CREATION_TIME" column="CREATION_TIME"
+			type="java.util.Date" not-null="false" length="32" />
+		<property name="LAST_MODIFICATION_TIME" column="LAST_MODIFICATION_TIME" type="java.util.Date"
+			not-null="false" length="32" />
+		<property name="LAST_MODIFICATION_BY" column="LAST_MODIFICATION_BY"
+			type="java.lang.String" not-null="false" length="32" />
+		<property name="DESCRIPTION" column="DESCRIPTION" type="java.lang.String"
+			not-null="false" length="32" />
+		<property name="NO_OF_EVALUATORS" column="NO_OF_EVALUATORS"
+			type="java.lang.String" not-null="false" length="32" />
+		<property name="FIRST_EVALUATOR" column="FIRST_EVALUATOR"
+			type="java.lang.String" not-null="false" length="32" />
+		<property name="SECOND_EVALUATOR" column="SECOND_EVALUATOR" type="java.lang.String"
+			not-null="false" length="32" />
+		<property name="THIRD_EVALUATOR" column="THIRD_EVALUATOR"
+			type="java.lang.String" not-null="false" length="32" />
+		<property name="TOTAL_POINTS" column="TOTAL_POINTS"
+			type="java.lang.String" not-null="false" length="32" />
+		<property name="INVESTOR_ID" column="INVESTOR_ID"
+			type="java.lang.String" not-null="false" length="32" />
+	
+
+	</class>
+</hibernate-mapping>
